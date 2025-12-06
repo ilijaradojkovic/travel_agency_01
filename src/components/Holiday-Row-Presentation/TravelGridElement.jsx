@@ -1,0 +1,63 @@
+import React from "react";
+
+export default function TravelGridElement({
+  title,
+  destinations,
+  titleImage,
+  reverse,
+}) {
+  return (
+    <div
+      className={`flex items-center gap-6 w-[80%]  justify-center ${
+        reverse ? "flex-row-reverse" : "flex-row"
+      }`}
+    >
+      {/* Circle logo */}
+      <div className="flex flex-1 justify-center items-center">
+        <div className="w-60 h-60 rounded-full overflow-hidden relative group cursor-pointer">
+          {/* Image with zoom on hover */}
+          <img
+            src={titleImage}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+
+          {/* Black transparent overlay */}
+          <div className="absolute inset-0 bg-black/10"></div>
+
+          {/* Centered title */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-white text-3xl font-bold drop-shadow-lg">
+              {title}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Destination cards */}
+      {destinations.map((dest) => (
+        <div
+          key={dest.name}
+          className="relative bg-pink-300 h-60 flex-1 overflow-hidden rounded-lg cursor-pointer transform transition duration-300 hover:scale-105"
+        >
+          <img
+            src={dest.img}
+            alt={dest.name}
+            className="w-full h-full  object-cover"
+          />
+
+      
+          <div className="absolute bottom-2 left-2 text-white">
+            <h3 className="font-bold text-lg">{dest.name}</h3>
+            <p className="text-sm">
+              ⭐ {dest.rating} {dest.review}
+            </p>
+          </div>
+          <div className="absolute bottom-2 right-2 text-white font-bold text-lg">
+            ${dest.price}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
