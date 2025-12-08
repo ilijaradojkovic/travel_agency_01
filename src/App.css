@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Yellowtail&display=swap');
+
 @import "tailwindcss";
 @import "swiper/css";
 @import "swiper/css/navigation";
@@ -24,6 +26,15 @@
   /* WHITE / BLACK */
   --color-white: rgb(255, 255, 255);
   --color-black: rgb(0, 0, 0);
+
+
+
+}
+
+@layer base {
+  .font-yellowtail {
+    font-family: 'Yellowtail', cursive;
+  }
 }
 
 /* global.css ili index.css */

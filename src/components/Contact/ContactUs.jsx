@@ -2,7 +2,10 @@ import React from "react";
 
 export default function ContactSection() {
   return (
-    <div className="w-full min-h-screen  flex items-center justify-center p-8">
+    <div className="w-full min-h-screen relative   flex items-center justify-center p-8">
+      <div className="absolute -top-5 left-10 ">
+        <img src="/images/camera.png" alt="Camera Icon" className="w-84 -rotate-25" />
+      </div>
       <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Left Side */}
         <div>

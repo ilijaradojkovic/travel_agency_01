@@ -17,13 +17,13 @@ export default function SearchBar() {
   const [countryValue, setCountryValue] = useState("");
 
   const [daysValue, setDaysValue] = useState(""); // ⭐ NOVO
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const [searchQuery, setSearchQuery] = useState("");
 
   const cities = ["Paris", "Rome", "Belgrade", "New York", "Tokyo", "Dubai", "Barcelona", "Sydney"];
-  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-  const countries = ["Serbia","Italy","France","Spain","Greece","USA","Japan","Germany","Canada","Turkey","Croatia","Montenegro","India"];
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const countries = ["Serbia", "Italy", "France", "Spain", "Greece", "USA", "Japan", "Germany", "Canada", "Turkey", "Croatia", "Montenegro", "India"];
 
   return (
     <div className="w-full max-w-5xl mx-auto -mt-10 z-20 absolute bottom-[-2rem] ">
@@ -40,7 +40,10 @@ export default function SearchBar() {
         >
           <FaGlobe className="text-gray-400 text-lg" />
 
-          <span className="text-gray-700 font-medium">
+          <span
+            className={`font-medium ${countryValue ? "text-gray-700" : "text-gray-400"
+              }`}
+          >
             {countryValue || "Where to?"}
           </span>
 
@@ -76,7 +79,10 @@ export default function SearchBar() {
         >
           <FaCalendarAlt className="text-gray-400 text-lg" />
 
-          <span className="text-gray-700 font-medium">
+          <span
+            className={`font-medium ${monthValue ? "text-gray-700" : "text-gray-400"
+              }`}
+          >
             {monthValue || "Month"}
           </span>
 
@@ -98,6 +104,7 @@ export default function SearchBar() {
           )}
         </div>
 
+
         {/* DAYS — NUMBER INPUT */}
         <div className="flex flex-1 items-center gap-3 px-6 py-5 border-r">
           <FaClock className="text-gray-400 text-lg" />
@@ -113,7 +120,7 @@ export default function SearchBar() {
         </div>
 
         {/* BUTTON */}
-        <button className="bg-teal-400 cursor-pointer hover:bg-teal-500 text-white font-semibold tracking-wide px-10 py-5 rounded-md" onClick={()=>navigate(`/search?country=${countryValue}&month=${monthValue}&days=${daysValue}`)}>
+        <button className="bg-teal-400 cursor-pointer hover:bg-teal-500 text-white font-semibold tracking-wide px-10 py-5 rounded-md" onClick={() => navigate(`/search?country=${countryValue}&month=${monthValue}&days=${daysValue}`)}>
           FIND NOW
         </button>
       </div>

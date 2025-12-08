@@ -1,15 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SearchCard from "../components/SearchCard/SearchCard";
-import { FaSearch } from "react-icons/fa";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { FaRegCalendarAlt } from "react-icons/fa";
-import { FaLongArrowAltDown } from "react-icons/fa";
-import { FaLongArrowAltUp } from "react-icons/fa";
-import { FaSort } from "react-icons/fa";
+import Footer from "../components/Footer/Footer";
 
+import {
+  FaSearch,
+  FaMapMarkerAlt,
+  FaRegCalendarAlt,
+  FaLongArrowAltDown,
+  FaLongArrowAltUp,
+  FaSort
+} from "react-icons/fa";
 
 export default function SearchPage() {
   const [selectedSort, setSelectedSort] = useState("date");
+  const [offset, setOffset] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const itemsPerPage = 10; // koliko elemenata po stranici
+
+  // Dummy data - 10 elemenata
+  const allItems = Array.from({ length: 10 }, (_, i) => i + 1);
+
+  // Pagination logika
+  const indexOfLast = currentPage * itemsPerPage;
+  const indexOfFirst = indexOfLast - itemsPerPage;
+  const currentItems = allItems.slice(indexOfFirst, indexOfLast);
+  const totalPages = Math.ceil(allItems.length / itemsPerPage);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" }); // scroll na vrh
+  };
+
+  // Parallax scroll effect
+  useEffect(() => {
+    const handleScroll = () => setOffset(window.scrollY * 0.5);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const sortOptions = [
     { key: "date", label: "Date", icon: <FaRegCalendarAlt /> },
@@ -19,48 +47,89 @@ export default function SearchPage() {
   ];
 
   return (
-    <div className="w-full h-[200vh] bg-amber-600 flex flex-col items-center relative">
-      <div className="relative w-full h-[60vh] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-fixed"
-          style={{ backgroundImage: "url('./images/search.jpg')" }}
-        ></div>
-        <h1 className="relative flex items-center justify-center h-full text-white text-6xl font-bold">
-          Tours Search Page
-        </h1>
-      </div>
+    <div className="flex flex-col min-h-screen">
 
+      {/* Glavni sadržaj */}
+      <div className="flex-1 w-full flex flex-col items-center relative">
 
-      <div className="w-[70%] min-h-[100vh] top-100 absolute left-1/2 -translate-x-1/2 bg-white">
-        {/* SORT FILTERI */}
-        <div className="bg-gray-300 flex flex-row gap-10 h-20 items-center">
-          {sortOptions.map((opt) => (
-            <div
-              key={opt.key}
-              onClick={() => setSelectedSort(opt.key)}
-              className={`uppercase h-full flex justify-center items-center flex-1 font-bold cursor-pointer px-3 py-2 rounded transition 
-        ${selectedSort === opt.key
-                  ? "bg-[#35D0CE] text-white "
-                  : "text-white hover:text-white hover:scale-105"
-                }`}
-            >
-              <div className="flex items-center gap-2">
-                {opt.icon}
-                <span className="text-sm">{opt.label}</span>
-              </div>
-            </div>
-          ))}
+        {/* Hero / Parallax Slika */}
+        <div className="relative w-full h-[60vh] overflow-hidden">
+          <img
+            src="./images/search.jpg"
+            alt="Slika"
+            className="absolute w-full h-full object-cover"
+            style={{ transform: `translateY(${offset}px)` }}
+          />
+          <h1 className="absolute inset-0 flex items-center justify-center text-white text-6xl font-bold">
+            Tours Search Page
+          </h1>
         </div>
 
-        <div className="flex flex-row w-full p-15 gap-15">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <SearchCard />
-            <SearchCard />
-            <SearchCard />
-            <SearchCard />
+        {/* Content + Sidebar */}
+        <div className="w-[70%] bg-white mt-[-80px] relative z-10 p-6 flex flex-row gap-8">
+
+          {/* Glavni grid sa karticama */}
+          <div className="flex-1 flex flex-col gap-6">
+
+            {/* SORT FILTERI */}
+            <div className="bg-gray-300 flex flex-row gap-4 h-16 items-center ">
+              {sortOptions.map((opt) => (
+                <div
+                  key={opt.key}
+                  onClick={() => setSelectedSort(opt.key)}
+                  className={`uppercase h-full flex justify-center items-center flex-1 font-bold cursor-pointer px-3 py-2 transition 
+                    ${selectedSort === opt.key
+                      ? "bg-[#35D0CE] text-white"
+                      : "text-white hover:text-white hover:scale-105"
+                    }`}
+                >
+                  <div className="flex items-center gap-2">
+                    {opt.icon}
+                    <span className="text-sm">{opt.label}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* SearchCard Grid sa pagination */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+              {currentItems.map((item) => (
+                <SearchCard key={item} />
+              ))}
+            </div>
+
+            {/* Pagination */}
+            <div className="flex justify-center gap-3 mt-6">
+              <button
+                onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
+                className="px-3 py-1 bg-gray-300  hover:bg-gray-400"
+                disabled={currentPage === 1}
+              >
+                Prev
+              </button>
+
+              {Array.from({ length: totalPages }, (_, i) => (
+                <button
+                  key={i + 1}
+                  onClick={() => handlePageChange(i + 1)}
+                  className={`px-3 py-1  ${currentPage === i + 1 ? "bg-[#35D0CE] text-white" : "bg-gray-200"}`}
+                >
+                  {i + 1}
+                </button>
+              ))}
+
+              <button
+                onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
+                className="px-3 py-1 bg-gray-300  hover:bg-gray-400"
+                disabled={currentPage === totalPages}
+              >
+                Next
+              </button>
+            </div>
+
           </div>
 
-          {/* 🟦 FILTER PANEL */}
+          {/* Sidebar Filter Panel */}
           <div className="w-[30%] bg-[#35D0CE] p-6 text-white space-y-8 ">
 
             {/* TITLE */}
@@ -72,8 +141,7 @@ export default function SearchPage() {
             {/* Search fields */}
             <div className="space-y-3">
 
-              {/* Search Tour */}
-              <div className="flex items-center bg-white/20 p-3  gap-3">
+              <div className="flex items-center bg-white/20 p-3 gap-3 ">
                 <FaSearch />
                 <input
                   type="text"
@@ -82,8 +150,7 @@ export default function SearchPage() {
                 />
               </div>
 
-              {/* Where To */}
-              <div className="flex items-center bg-white/20 p-3  gap-3">
+              <div className="flex items-center bg-white/20 p-3 gap-3 ">
                 <FaMapMarkerAlt />
                 <input
                   type="text"
@@ -92,8 +159,7 @@ export default function SearchPage() {
                 />
               </div>
 
-              {/* Month */}
-              <div className="flex items-center bg-white/20 p-3  gap-3">
+              <div className="flex items-center bg-white/20 p-3 gap-3 ">
                 <FaRegCalendarAlt />
                 <input
                   type="month"
@@ -107,33 +173,33 @@ export default function SearchPage() {
             <div className="space-y-3">
               <h3 className="font-semibold text-lg">Filter by price</h3>
 
-              {/* Min / Max Inputs */}
               <div className="flex gap-3">
                 <input
                   type="number"
                   placeholder="Min"
-                  className="w-full p-3  bg-white text-black"
+                  className="w-full p-3 bg-white text-black "
                 />
                 <input
                   type="number"
                   placeholder="Max"
-                  className="w-full p-3  bg-white text-black"
+                  className="w-full p-3 bg-white text-black "
                 />
               </div>
             </div>
 
-
-
-            {/* Button */}
-            <button className="w-full bg-white text-black p-5 text-sm  tracking-widest font-semibold hover:bg-gray-200">
+            {/* Search Button */}
+            <button className="w-full bg-white text-black p-3 text-sm font-semibold hover:bg-gray-200 ">
               SEARCH
             </button>
 
           </div>
 
-
         </div>
       </div>
+
+      {/* Footer */}
+      <Footer />
+
     </div>
   );
 }

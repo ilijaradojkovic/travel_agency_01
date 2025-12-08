@@ -34,9 +34,9 @@ export default function Home() {
     h-[80vh]
     relative"
         >
-          <h5 className="text-3xl">Come sith Us</h5>
-          <h1 className="text-8xl">Relax and Enjoy.</h1>
-          <h5 className="text-3xl text-center w-[50%]">
+          <h5 className="text-5xl font-yellowtail">Come sith Us</h5>
+          <h1 className="text-8xl font-semibold">Relax and Enjoy.</h1>
+          <h5 className="text-2xl text-center w-[50%]">
             cupiditate quas mollitia quillat, deleniti consequatur reprehenderit
             ipsam praesentium! Asperiores, laudantium nobis?
           </h5>
