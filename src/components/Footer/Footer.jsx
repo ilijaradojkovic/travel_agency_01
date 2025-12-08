@@ -63,7 +63,7 @@ export default function Footer() {
               placeholder="   Email"
               className="w-full bg-[#3a3a3a] p-3 rounded text-white outline-none"
             />
-            <button className="w-full bg-[#35D0CE] text-white font-bold py-3 rounded">
+            <button className="w-full bg-primary text-black font-bold py-3 rounded">
               SUBSCRIBE
             </button>
           </div>

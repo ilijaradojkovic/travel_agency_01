@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import Navbar from "../components/Navbar";
 import App from "../App";
 import SearchPage from "../pages/SearchPage";
+import AboutUsPage from "../pages/AboutUs";
 const ProtectedRoute = ({ children }) => {
   const { user } = useSelector((state) => state.user);
   if (!user) {
@@ -47,7 +48,7 @@ export function AppRouter() {
 
           {/* Protected routes */}
           <Route
-            path="/search"
+            path="/tours"
             element={
               <PublicRoute>
                 <SearchPage />
@@ -55,6 +56,16 @@ export function AppRouter() {
             }
           />
 
+
+          {/* Protected routes */}
+          <Route
+            path="/about"
+            element={
+              <PublicRoute>
+                <AboutUsPage />
+              </PublicRoute>
+            }
+          />
           {/* Default fallback */}
           <Route path="*" element={<Navigate to="/home" replace />} />
         </Routes>

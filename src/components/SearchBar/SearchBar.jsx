@@ -26,7 +26,7 @@ export default function SearchBar() {
   const countries = ["Serbia", "Italy", "France", "Spain", "Greece", "USA", "Japan", "Germany", "Canada", "Turkey", "Croatia", "Montenegro", "India"];
 
   return (
-    <div className="w-full max-w-5xl mx-auto -mt-10 z-20 absolute bottom-[-2rem] ">
+    <div className="w-full max-w-5xl mx-auto -mt-10 z-20 absolute bottom-[-2rem] shadow-lg rounded-t-lg">
       <div className="bg-white p-3 shadow-lg rounded-md flex items-center overflow-visible">
 
         {/* COUNTRY */}
@@ -120,7 +120,7 @@ export default function SearchBar() {
         </div>
 
         {/* BUTTON */}
-        <button className="bg-teal-400 cursor-pointer hover:bg-teal-500 text-white font-semibold tracking-wide px-10 py-5 rounded-md" onClick={() => navigate(`/search?country=${countryValue}&month=${monthValue}&days=${daysValue}`)}>
+        <button className="bg-primary cursor-pointer  text-white font-semibold tracking-wide px-10 py-5 rounded-md" onClick={() => navigate(`/tours?country=${countryValue}&month=${monthValue}&days=${daysValue}`)}>
           FIND NOW
         </button>
       </div>
