@@ -1,11 +1,14 @@
 import React from "react";
+import { useNavigate, useNavigation } from "react-router-dom";
 
 export default function TravelGridElement({
   title,
   destinations,
   titleImage,
   reverse,
+  
 }) {
+  const navigate=useNavigate();
   return (
     <div
       className={`flex items-center gap-6 w-[80%]  justify-center ${
@@ -13,7 +16,7 @@ export default function TravelGridElement({
       }`}
     >
       {/* Circle logo */}
-      <div className="flex flex-1 justify-center items-center">
+      <div className="flex flex-1 justify-center items-center" on onClick={()=>navigate(`/tours?country=${title}`)}>
         <div className="w-60 h-60 rounded-full overflow-hidden relative group cursor-pointer">
           {/* Image with zoom on hover */}
           <img
