@@ -16,8 +16,8 @@
 @theme {
   
   /* PRIMARY */
-  --color-primary: #35D0CE;          /* light mode primary */
-  --color-primary-hover: #2AA9A6;    /* darker hover */
+  --color-primary: rgb(0, 150, 136);          /* light mode primary */
+  --color-primary-hover: rgb(0, 170, 155);;    /* darker hover */
 
   /* SECONDARY */
   --color-secondary: rgb(99, 102, 241);       /* indigo-like secondary */

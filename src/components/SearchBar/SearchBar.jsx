@@ -120,7 +120,7 @@ export default function SearchBar() {
         </div>
 
         {/* BUTTON */}
-        <button className="bg-primary cursor-pointer  text-white font-semibold tracking-wide px-10 py-5 rounded-md" onClick={() => navigate(`/tours?country=${countryValue}&month=${monthValue}&days=${daysValue}`)}>
+        <button className="bg-primary cursor-pointer hover:bg-primary-hover transition-colors text-white font-semibold tracking-wide px-10 py-5 rounded-md" onClick={()=>navigate(`/search?country=${countryValue}&month=${monthValue}&days=${daysValue}`)}>
           FIND NOW
         </button>
       </div>

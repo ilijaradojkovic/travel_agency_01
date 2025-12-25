@@ -1,4 +1,11 @@
 import React from "react";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaLinkedinIn,
+  FaYoutube,
+} from "react-icons/fa";
 
 export default function ContactSection() {
   return (
@@ -24,21 +31,31 @@ export default function ContactSection() {
           <div className="flex items-center gap-3 mb-4">
             <span className="text-xl">✉️</span>
             <a
-              href="mailto:yukakudo.dearialce@gmail.com"
+              href="mailto: atlasagency@gmail.com"
               className="text-primary hover:underline"
             >
-              yukakudo.dearialce@gmail.com
+               atlasagency@gmail.com
             </a>
           </div>
 
           {/* Social Icons */}
+          {/* Social Icons */}
           <div className="flex gap-4 text-xl">
-            <span>👍</span>
-            <span>⚫</span>
-            <span>⚫</span>
-            <span>⚫</span>
-            <span>⚫</span>
-            <span>⚫</span>
+            <a href="#" className=" text-black hover:text-primary transition">
+              <FaFacebookF />
+            </a>
+            <a href="#" className="text-black hover:text-primary transition">
+              <FaInstagram />
+            </a>
+            <a href="#" className="text-black hover:text-primary transition">
+              <FaTwitter />
+            </a>
+            <a href="#" className="text-black hover:text-primary transition">
+              <FaLinkedinIn />
+            </a>
+            <a href="#" className="text-black hover:text-primary transition">
+              <FaYoutube />
+            </a>
           </div>
         </div>
 
