@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../components/Footer/Footer";
+import { HashLink as Link } from "react-router-hash-link";
 
 export default function AboutUsPage() {
   return (
@@ -21,15 +22,19 @@ export default function AboutUsPage() {
             className="w-full md:w-1/2 text-black rounded-lg shadow-lg"
           />
           <div className="md:w-1/2">
-            <h2 className="text-4xl font-semibold mb-4 text-black">Our Story</h2>
+            <h2 className="text-4xl font-semibold mb-4 text-black">
+              Our Story
+            </h2>
             <p className="text-gray-700 mb-4">
-              We are a passionate travel agency dedicated to creating unforgettable experiences. 
-              From exotic beaches to mountain adventures, we craft personalized tours that you will 
-              cherish forever.
+              We are a passionate travel agency dedicated to creating
+              unforgettable experiences. From exotic beaches to mountain
+              adventures, we craft personalized tours that you will cherish
+              forever.
             </p>
             <p className="text-gray-700">
-              Our mission is to make travel easy, safe, and enjoyable for everyone. We believe in 
-              authentic experiences and strive to connect travelers with the heart of every destination.
+              Our mission is to make travel easy, safe, and enjoyable for
+              everyone. We believe in authentic experiences and strive to
+              connect travelers with the heart of every destination.
             </p>
           </div>
         </div>
@@ -67,7 +72,7 @@ export default function AboutUsPage() {
 
           <div className="flex flex-col items-center">
             <img
-              src="./images/team3.jpg"
+              src="./images/team3.avif"
               alt="Team member"
               className="w-48 h-48 object-cover rounded-full shadow-lg mb-4"
             />
@@ -79,18 +84,22 @@ export default function AboutUsPage() {
 
       {/* Call to Action */}
       <section className="py-20 px-6 md:px-20 bg-primary text-white text-center rounded-t-lg">
-        <h2 className="text-4xl font-bold mb-4">Ready for Your Next Adventure?</h2>
+        <h2 className="text-4xl font-bold mb-4">
+          Ready for Your Next Adventure?
+        </h2>
         <p className="mb-8">
           Contact us today and let us plan a journey you'll never forget.
         </p>
-        <a
-          href="/contact"
-          className="inline-block bg-white text-black font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-gray-100 transition"
+
+        <Link
+          smooth
+          to="/home#contact-section"
+          className="inline-block bg-white text-primary font-semibold px-8 py-4 rounded-full shadow-lg hover:opacity-90 transition"
         >
-          Get in Touch
-        </a>
+          Contact Us
+        </Link>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

@@ -5,23 +5,54 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 export default function ReviewCarousel() {
-  const items = [
-    {
-      img: "./images/avatar.avif",
-      text: "Lorem ipsum dolor sit amet.",
-      name: "Marko Marković",
-    },
-    {
-      img: "./images/avatar.avif",
-      text: "Quisquam aliquid fuga id.",
-      name: "Ana Anić",
-    },
-    {
-      img: "./images/avatar.avif",
-      text: "Vrlo profesionalno, top preporuka!",
-      name: "Petar Petrović",
-    },
-  ];
+const items = [
+  {
+    img: "./images/avatar.avif",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Marko Marković",
+  },
+  {
+    img: "./images/avatar.avif",
+    text: "Quisquam aliquid fuga id, sed do eiusmod tempor incididunt.",
+    name: "Ana Anić",
+  },
+  {
+    img: "./images/avatar.avif",
+    text: "Vrlo profesionalno, top preporuka!",
+    name: "Petar Petrović",
+  },
+  {
+    img: "./images/avatar.avif",
+    text: "Fantastično iskustvo, sve je bilo savršeno organizovano.",
+    name: "Jovana Jovanović",
+  },
+  {
+    img: "./images/avatar.avif",
+    text: "Putovanje koje ću dugo pamtiti, preporučujem svima.",
+    name: "Marko Stojanović",
+  },
+  {
+    img: "./images/avatar.avif",
+    text: "Odlična agencija, sve je prošlo glatko i profesionalno.",
+    name: "Ivana Ilić",
+  },
+  {
+    img: "./images/avatar.avif",
+    text: "Svaka preporuka, fantastična usluga i prelepe destinacije.",
+    name: "Nikola Nikolić",
+  },
+  {
+    img: "./images/avatar.avif",
+    text: "Predivno iskustvo, sigurno ću opet putovati sa njima.",
+    name: "Maja Majić",
+  },
+  {
+    img: "./images/avatar.avif",
+    text: "Organizacija na visokom nivou, sve pohvale timu.",
+    name: "Filip Filipović",
+  },
+];
+
 
   return (
     <Swiper

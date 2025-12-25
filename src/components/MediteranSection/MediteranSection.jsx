@@ -27,7 +27,7 @@ export default function MediterraneanSection() {
 
   return (
     <div className=" py-20 flex flex-col items-center text-center">
-        <HeroTitle mainTitle={"World Tour"} topTitle={"The Unforgettable"} subTitle={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aene an commodo ligula eget dolor. Aenean massa. Cum sociis"} textColor={"#2a2a2a"} />
+        <HeroTitle mainTitle={"World Tour"} topTitle={"The Unforgettable"} subTitle={"Travel the world, explore diverse cultures, and create unforgettable memories on every continent"} textColor={"#2a2a2a"} />
 
       {/* Cards */}
       <div className="grid md:grid-cols-3 gap-10 mt-16">

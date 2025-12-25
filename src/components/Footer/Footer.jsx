@@ -5,7 +5,7 @@ export default function Footer() {
 
     {/* LOGO + INFO */}
     <div className="flex flex-col items-center gap-6">
-      <h1 className="text-5xl font-bold text-yellow-400">Atlas.</h1>
+      <h1 className="text-5xl font-bold text-primary">Atlas.</h1>
 
       <p className="text-gray-400 max-w-md">
         Atlas is a trusted travel agency offering carefully planned journeys and unforgettable travel experiences around the world.

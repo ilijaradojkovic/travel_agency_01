@@ -1,23 +1,31 @@
 import React from "react";
-import { useNavigate, useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function TravelGridElement({
   title,
   destinations,
   titleImage,
   reverse,
-  
 }) {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/tours?country=${title}`);
+    window.scrollTo({ top: 0, behavior: "smooth" }); // scroll na vrh
+  };
+
   return (
     <div
-      className={`flex items-center gap-6 w-[80%]  justify-center ${
+      className={`flex items-center gap-6 w-[80%] justify-center ${
         reverse ? "flex-row-reverse" : "flex-row"
       }`}
     >
       {/* Circle logo */}
-      <div className="flex flex-1 justify-center items-center" on onClick={()=>navigate(`/tours?country=${title}`)}>
-        <div className="w-60 h-60 rounded-full overflow-hidden relative group cursor-pointer">
+      <div
+        className="flex flex-1 justify-center items-center cursor-pointer"
+        onClick={handleClick}
+      >
+        <div className="w-60 h-60 rounded-full overflow-hidden relative group">
           {/* Image with zoom on hover */}
           <img
             src={titleImage}
@@ -46,10 +54,9 @@ export default function TravelGridElement({
           <img
             src={dest.img}
             alt={dest.name}
-            className="w-full h-full  object-cover"
+            className="w-full h-full object-cover"
           />
 
-      
           <div className="absolute bottom-2 left-2 text-white">
             <h3 className="font-bold text-lg">{dest.name}</h3>
             <p className="text-sm">

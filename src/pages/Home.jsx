@@ -37,8 +37,7 @@ export default function Home() {
           <h5 className="text-5xl font-yellowtail">Come sith Us</h5>
           <h1 className="text-8xl font-semibold">Relax and Enjoy.</h1>
           <h5 className="text-2xl text-center w-[50%]">
-            cupiditate quas mollitia quillat, deleniti consequatur reprehenderit
-            ipsam praesentium! Asperiores, laudantium nobis?
+            Experience peace, adventure, and bliss.
           </h5>
 
           <SearchBar />
@@ -60,9 +59,7 @@ export default function Home() {
           textColor={"black"}
           topTitle={"Choose Your"}
           mainTitle={"Perfect Holiday"}
-          subTitle={
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
-          }
+          subTitle={"Make every moment unforgettable."}
         />
         <TravelGrid />
       </section>
@@ -81,9 +78,7 @@ export default function Home() {
           textColor={"white"}
           topTitle={"Go & Discover"}
           mainTitle={"Breathtaking Cities"}
-          subTitle={
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
-          }
+          subTitle={"Wonders around every corner."}
         />
         <div className="absolute inset-0 bg-black/50"></div>
         <img
@@ -130,8 +125,8 @@ export default function Home() {
       <section className="h-[100vh]">
         <MediterraneanSection />
       </section>
-      <section className="h-[100vh]">
-            <ContactSection/>
+      <section id="contact-section" className="h-[100vh]">
+        <ContactSection />
       </section>
       <section>
         <Footer />
