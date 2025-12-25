@@ -27,16 +27,15 @@ export default function Home() {
     flex-col 
     items-center 
     justify-center
-    pl-16 
     text-white
     gap-5
     w-full
     h-[80vh]
     relative"
         >
-          <h5 className="text-5xl font-yellowtail">Come sith Us</h5>
-          <h1 className="text-8xl font-semibold">Relax and Enjoy.</h1>
-          <h5 className="text-2xl text-center w-[50%]">
+          <h5 className="lg:text-5xl font-yellowtail md:text-4xl">Come sith Us</h5>
+          <h1 className="lg:text-8xl font-semibold md:text-7xl">Relax and Enjoy.</h1>
+          <h5 className="lg:text-2xl text-center w-[50%] md:text-2xl">
             Experience peace, adventure, and bliss.
           </h5>
 
@@ -52,7 +51,8 @@ export default function Home() {
       items-center
       w-full
       gap-30
-      h-[150vh]
+      lg:h-[150vh]
+      md:h-[300vh]
       "
       >
         <HeroTitle
@@ -83,14 +83,15 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50"></div>
         <img
           src="/images/cityExample.jpg"
-          className=" absolute w-[50%] h-[70%] bottom-[-10%]"
+          className=" absolute lg:w-[50%] lg:h-[70%] lg:bottom-[-10%] md:h-[50%] md:bottom-[-5%] "
         />
       </section>
       <section
         className="
-      h-[20vh]
+      lg:h-[20vh]
       flex flex-row justify-center items-center
       mt-30
+      md:h-[40vh]
    
       "
       >
@@ -118,14 +119,14 @@ export default function Home() {
         {/* Bottom right polaroid */}
         <img
           src="./images/poloriod-picture.png"
-          className="absolute w-70 bottom-[-400px] z-10 right-20 "
+          className="absolute lg:w-70 bottom-[-400px] z-10 right-20 md:w-40"
         />
       </section>
 
       <section className="h-[100vh]">
         <MediterraneanSection />
       </section>
-      <section id="contact-section" className="h-[100vh]">
+      <section  className="h-[100vh]">
         <ContactSection />
       </section>
       <section>

@@ -23,7 +23,7 @@ export default function FeatureSection() {
   ];
 
   return (
-    <section className="w-full py-20">
+    <section className="w-full py-20 md:mt-30">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-14 place-items-center">
         {items.map((item, index) => (
           <div key={index} className="flex flex-col items-center text-center gap-4">

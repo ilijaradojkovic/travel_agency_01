@@ -16,16 +16,16 @@ export default function TravelGridElement({
 
   return (
     <div
-      className={`flex items-center gap-6 w-[80%] justify-center ${
-        reverse ? "flex-row-reverse" : "flex-row"
-      }`}
+      className={`flex items-center gap-6 w-[80%] justify-center  ${
+        reverse ? "lg:flex-row-reverse md:flex-col" : "lg:flex-row md:flex-col"
+      } `}
     >
       {/* Circle logo */}
       <div
         className="flex flex-1 justify-center items-center cursor-pointer"
         onClick={handleClick}
       >
-        <div className="w-60 h-60 rounded-full overflow-hidden relative group">
+        <div className="lg:w-60 lg:h-60 md:h-40 md:w-40 rounded-full overflow-hidden relative group">
           {/* Image with zoom on hover */}
           <img
             src={titleImage}
@@ -49,12 +49,12 @@ export default function TravelGridElement({
       {destinations.map((dest) => (
         <div
           key={dest.name}
-          className="relative bg-pink-300 h-60 flex-1 overflow-hidden rounded-lg cursor-pointer transform transition duration-300 hover:scale-105"
+          className="relative bg-pink-300 lg:h-60 md:h-40 md:w-full flex-1 overflow-hidden rounded-lg cursor-pointer transform transition duration-300 hover:scale-105"
         >
           <img
             src={dest.img}
             alt={dest.name}
-            className="w-full h-full object-cover"
+            className="lg:w-full lg:h-full md:h-40 md:w-full object-cover"
           />
 
           <div className="absolute bottom-2 left-2 text-white">
