@@ -26,11 +26,11 @@ export default function MediterraneanSection() {
   ];
 
   return (
-    <div className=" py-20 flex flex-col items-center text-center">
+    <div className="py-10 sm:py-20 flex flex-col items-center text-center px-4">
         <HeroTitle mainTitle={"World Tour"} topTitle={"The Unforgettable"} subTitle={"Travel the world, explore diverse cultures, and create unforgettable memories on every continent"} textColor={"#2a2a2a"} />
 
       {/* Cards */}
-      <div className="grid md:grid-cols-3 gap-10 mt-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-10 mt-10 sm:mt-16 w-full max-w-6xl mx-auto">
         {cards.map((c, idx) => (
           <a
             key={idx}
@@ -41,7 +41,7 @@ export default function MediterraneanSection() {
             <img
               src={c.img}
               alt={c.title}
-              className="w-[350px] h-[500px] object-cover rounded-md 
+              className="w-full h-40 sm:h-64 md:h-[500px] object-cover rounded-md 
                          transition-transform duration-500 group-hover:scale-110"
             />
 
@@ -53,15 +53,15 @@ export default function MediterraneanSection() {
 
             {/* BADGE */}
             {c.badge && (
-              <div className="absolute top-4 right-0 bg-teal-400 text-white px-6 py-2 text-sm font-semibold rounded-l-md">
+              <div className="absolute top-2 sm:top-4 right-0 bg-teal-400 text-white px-3 sm:px-6 py-1 sm:py-2 text-xs sm:text-sm font-semibold rounded-l-md">
                 {c.badge}
               </div>
             )}
 
             {/* TITLE + PRICE */}
-            <div className="absolute bottom-6 left-6 text-left text-white drop-shadow-xl">
-              <h3 className="text-2xl font-bold">{c.title}</h3>
-              <p className="text-lg">{c.price}</p>
+            <div className="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 text-left text-white drop-shadow-xl">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold">{c.title}</h3>
+              <p className="text-sm sm:text-base md:text-lg">{c.price}</p>
             </div>
           </a>
         ))}

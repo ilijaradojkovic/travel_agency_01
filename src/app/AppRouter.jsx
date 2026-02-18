@@ -11,6 +11,7 @@ import Navbar from "../components/Navbar";
 import App from "../App";
 import SearchPage from "../pages/SearchPage";
 import AboutUsPage from "../pages/AboutUs";
+import ContactSection from "../components/Contact/ContactUs";
 const ProtectedRoute = ({ children }) => {
   const { user } = useSelector((state) => state.user);
   if (!user) {
@@ -63,6 +64,16 @@ export function AppRouter() {
             element={
               <PublicRoute>
                 <AboutUsPage />
+              </PublicRoute>
+            }
+          />
+
+           {/* Protected routes */}
+          <Route
+            path="/countact-us"
+            element={
+              <PublicRoute>
+                <ContactSection />
               </PublicRoute>
             }
           />

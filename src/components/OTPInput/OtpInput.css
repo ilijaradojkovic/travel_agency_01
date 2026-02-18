@@ -262,3 +262,98 @@ html {
         border-color: rgba(20, 134, 240, 1);
     }
 }
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 20px 20px 20px;
+        min-height: 350px;
+    }
+
+    .container h1 {
+        font-size: 1.5em;
+        margin: 0 0 15px;
+    }
+
+    .container h1:after {
+        margin: 15px auto 0;
+    }
+
+    .form__pincode > input {
+        width: calc(16.666% - 1.5%);
+        height: 40px;
+        line-height: 38px;
+        font-size: 1.5em;
+        margin-right: 1.5%;
+    }
+
+    .form__pincode > label {
+        font-size: 0.9em;
+        margin: 8px 0;
+    }
+
+    .button--primary {
+        height: 44px;
+        line-height: 44px;
+        font-size: 12px;
+        padding: 0 15px;
+    }
+
+    .close-button-holder {
+        top: 10px;
+        right: 10px;
+    }
+
+    .resend-code-text-holder {
+        padding: 0.5rem;
+    }
+
+    .resend-code-text {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px 15px 15px 15px;
+        min-height: 300px;
+    }
+
+    .container h1 {
+        font-size: 1.2em;
+        margin: 0 0 12px;
+    }
+
+    .container h1:after {
+        height: 2px;
+        margin: 12px auto 0;
+    }
+
+    .form__pincode > input {
+        width: calc(16.666% - 1.2%);
+        height: 35px;
+        line-height: 33px;
+        font-size: 1.2em;
+        margin-right: 1.2%;
+    }
+
+    .form__pincode > label {
+        font-size: 0.8em;
+        margin: 6px 0;
+    }
+
+    .label {
+        font-size: 0.8em;
+    }
+
+    .button--primary {
+        height: 40px;
+        line-height: 40px;
+        font-size: 11px;
+        padding: 0 12px;
+        margin-top: 0.5rem;
+    }
+
+    .resend-code-text {
+        font-size: 0.85em;
+    }
+}

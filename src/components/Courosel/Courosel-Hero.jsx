@@ -68,13 +68,13 @@ const items = [
     >
       {items.map((item, i) => (
         <SwiperSlide key={i}>
-          <div className=" w-full h-full flex flex-col justify-center items-center p-4 gap-5 rounded-xl">
+          <div className="w-full h-full flex flex-col justify-center items-center p-2 sm:p-4 gap-3 sm:gap-5 rounded-xl">
             <img
               src={item.img}
-              className="w-45 h-45 rounded-full object-cover"
+              className="w-24 h-24 sm:w-32 sm:h-32 md:w-45 md:h-45 rounded-full object-cover"
             />
-            <p className="text-3xl text-center text-black">{item.text}</p>
-            <p className="text-xl text-black">{item.name}</p>
+            <p className="text-lg sm:text-2xl md:text-3xl text-center text-black px-2">{item.text}</p>
+            <p className="text-base sm:text-lg md:text-xl text-black">{item.name}</p>
           </div>
         </SwiperSlide>
       ))}

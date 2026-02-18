@@ -21,7 +21,12 @@ export const ResetPasswordModal = forwardRef(({}, ref) => {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: 400,
+        width: {
+            xs: '90%',
+            sm: '80%',
+            md: 400
+        },
+        maxWidth: 400,
         background: "var(--black-color)",
         boxShadow: 24,
     };

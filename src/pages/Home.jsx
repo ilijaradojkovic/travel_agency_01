@@ -12,14 +12,10 @@ import ContactSection from "../components/Contact/ContactUs";
 export default function Home() {
   return (
     <div className="">
-      <section
-        className="
-    h-[90vh]
-
-  "
-      >
+      {/* Hero Section */}
+      <section className="min-h-[60vh] sm:h-[90vh]">
         <div
-          className=" bg-[url('./images/hero.jpg')]
+          className="bg-[url('./images/hero.jpg')] 
     bg-cover 
     bg-center 
     bg-no-repeat
@@ -28,21 +24,25 @@ export default function Home() {
     items-center 
     justify-center
     text-white
-    gap-5
+    gap-2 sm:gap-5
     w-full
-    h-[80vh]
-    relative"
+    min-h-[60vh] sm:h-[80vh]
+    relative
+    px-4 sm:px-6"
         >
-          <h5 className="lg:text-5xl font-yellowtail md:text-4xl">Come sith Us</h5>
-          <h1 className="lg:text-8xl font-semibold md:text-7xl">Relax and Enjoy.</h1>
-          <h5 className="lg:text-2xl text-center w-[50%] md:text-2xl">
+          <h5 className="text-2xl sm:text-4xl lg:text-5xl font-yellowtail">Come sith Us</h5>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold">Relax and Enjoy.</h1>
+          <h5 className="text-sm sm:text-base md:text-lg lg:text-2xl text-center w-[90%] sm:w-[80%] md:w-[60%]">
             Experience peace, adventure, and bliss.
           </h5>
 
-          <SearchBar />
+          <div className="w-full mt-4">
+            <SearchBar />
+          </div>
         </div>
       </section>
 
+      {/* Choose Holiday Section */}
       <section
         className="
       flex
@@ -50,9 +50,11 @@ export default function Home() {
       justify-center
       items-center
       w-full
-      gap-30
-      lg:h-[150vh]
+      gap-8 sm:gap-12 lg:gap-30
+      min-h-auto py-10 sm:py-20
+      sm:h-[300vh]
       md:h-[300vh]
+      lg:h-[150vh]
       "
       >
         <HeroTitle
@@ -63,14 +65,17 @@ export default function Home() {
         />
         <TravelGrid />
       </section>
+
+      {/* Cities Section */}
       <section
         className="
-    h-[80vh]
+    min-h-[60vh] sm:h-[80vh]
     flex flex-col justify-start items-center
-    gap-5
+    gap-4 sm:gap-5
     relative
     bg-fixed bg-center bg-cover
-    pt-10
+    pt-6 sm:pt-10
+    px-4
   "
         style={{ backgroundImage: "url('/images/cityExampleCover.jpg')" }}
       >
@@ -83,52 +88,63 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50"></div>
         <img
           src="/images/cityExample.jpg"
-          className=" absolute lg:w-[50%] lg:h-[70%] lg:bottom-[-10%] md:h-[50%] md:bottom-[-5%] "
+          className="absolute w-[90%] sm:w-[70%] md:w-[60%] lg:w-[50%] h-auto sm:h-[50%] lg:h-[70%] bottom-[-5%] sm:bottom-[-5%] lg:bottom-[-10%] object-cover"
         />
       </section>
+
+      {/* Features Section */}
       <section
         className="
-      lg:h-[20vh]
+      min-h-auto py-10 sm:py-20
       flex flex-row justify-center items-center
-      mt-30
+      mt-8 sm:mt-30
       md:h-[40vh]
-   
+      lg:h-[20vh]
+      px-4
       "
       >
         <FeatureSection />
       </section>
+
+      {/* Reviews Section */}
       <section
         className="
-    h-[60vh]
-    flex flex-row justify-center items-center
-    mt-[120px]
-  bg-[#eeeeee]
+    min-h-[70vh] sm:h-[60vh]
+    flex flex-col sm:flex-row justify-center items-center
+    mt-10 sm:mt-[120px]
+    bg-[#eeeeee]
     relative 
+    px-4
   "
       >
-        <div className="w-[50%] h-full">
+        <div className="w-full sm:w-[50%] h-full">
           <ReviewCarousel />
         </div>
 
         {/* Top left shell */}
         <img
           src="./images/sea-shell.png"
-          className="absolute w-70  bottom-[-100px] left-10 "
+          className="hidden sm:block absolute w-40 md:w-70 bottom-[-100px] left-4 md:left-10"
         />
 
         {/* Bottom right polaroid */}
         <img
           src="./images/poloriod-picture.png"
-          className="absolute lg:w-70 bottom-[-400px] z-10 right-20 md:w-40"
+          className="hidden sm:block absolute w-32 md:w-40 lg:w-70 bottom-[-400px] z-10 right-4 md:right-10 md:right-20"
         />
       </section>
 
-      <section className="h-[100vh]">
+      {/* Mediterranean Section */}
+      <section className="min-h-[100vh] sm:h-[100vh]">
         <MediterraneanSection />
       </section>
-      <section  className="h-[100vh]">
+
+      {/* Contact Section */}
+      <section className="min-h-[100vh] sm:h-[100vh]">
         <ContactSection />
       </section>
+
+      {/* Footer Section */}
       <section>
         <Footer />
       </section>

@@ -22,3 +22,41 @@ body {
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
 }
+
+/* Mobile-First Responsive Utilities */
+@media (max-width: 640px) {
+  /* Ensure proper touch target sizes on mobile (minimum 44px) */
+  button, a, .clickable {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Reduce padding on small screens */
+  .px-6 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .px-8 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  /* Better readability on mobile with increased line-height */
+  p {
+    line-height: 1.6;
+  }
+
+  /* Optimize images for mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Ensure viewport scaling is correct */
+@media (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}

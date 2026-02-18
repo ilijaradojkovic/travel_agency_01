@@ -16,7 +16,7 @@ export default function SearchBar() {
   const [monthValue, setMonthValue] = useState("");
   const [countryValue, setCountryValue] = useState("");
 
-  const [daysValue, setDaysValue] = useState(""); // ⭐ NOVO
+  const [daysValue, setDaysValue] = useState("");
   const navigate = useNavigate();
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -26,22 +26,22 @@ export default function SearchBar() {
   const countries = ["Serbia", "Italy", "France", "Spain", "Greece", "USA", "Japan", "Germany", "Canada", "Turkey", "Croatia", "Montenegro", "India"];
 
   return (
-    <div className="w-full max-w-5xl  -mt-10 z-20 absolute bottom-[-2rem] shadow-lg rounded-t-lg">
-      <div className="bg-white p-3 shadow-lg rounded-md flex items-center overflow-visible">
+    <div className="w-full px-4 sm:px-0 sm:max-w-5xl sm:-mt-10 z-20 sm:absolute sm:bottom-[-2rem] sm:left-1/2 sm:-translate-x-1/2 shadow-lg rounded-t-lg">
+      <div className="bg-white p-2 sm:p-3 shadow-lg rounded-md flex flex-col sm:flex-row items-stretch sm:items-center overflow-visible gap-2 sm:gap-0">
 
         {/* COUNTRY */}
         <div
-          className="relative flex flex-1 items-center gap-3 px-6 py-5 border-r cursor-pointer"
+          className="relative flex flex-1 items-center gap-2 sm:gap-3 px-3 sm:px-6 py-3 sm:py-5 sm:border-r cursor-pointer border-b sm:border-b-0"
           onClick={() => {
             setTypeOpen(!typeOpen);
             setWhereOpen(false);
             setMonthOpen(false);
           }}
         >
-          <FaGlobe className="text-gray-400 text-lg" />
+          <FaGlobe className="text-gray-400 text-lg flex-shrink-0" />
 
           <span
-            className={`font-medium ${countryValue ? "text-gray-700" : "text-gray-400"
+            className={`font-medium text-sm sm:text-base ${countryValue ? "text-gray-700" : "text-gray-400"
               }`}
           >
             {countryValue || "Where to?"}
@@ -55,7 +55,7 @@ export default function SearchBar() {
               {countries.map((c) => (
                 <div
                   key={c}
-                  className="px-3 py-2 text-black hover:bg-gray-100 cursor-pointer"
+                  className="px-3 py-2 text-black text-sm hover:bg-gray-100 cursor-pointer"
                   onClick={() => {
                     setCountryValue(c);
                     setTypeOpen(false);
@@ -70,17 +70,17 @@ export default function SearchBar() {
 
         {/* MONTH */}
         <div
-          className="relative flex flex-1 items-center gap-3 px-6 py-5 border-r cursor-pointer"
+          className="relative flex flex-1 items-center gap-2 sm:gap-3 px-3 sm:px-6 py-3 sm:py-5 sm:border-r cursor-pointer border-b sm:border-b-0"
           onClick={() => {
             setMonthOpen(!monthOpen);
             setWhereOpen(false);
             setTypeOpen(false);
           }}
         >
-          <FaCalendarAlt className="text-gray-400 text-lg" />
+          <FaCalendarAlt className="text-gray-400 text-lg flex-shrink-0" />
 
           <span
-            className={`font-medium ${monthValue ? "text-gray-700" : "text-gray-400"
+            className={`font-medium text-sm sm:text-base ${monthValue ? "text-gray-700" : "text-gray-400"
               }`}
           >
             {monthValue || "Month"}
@@ -91,7 +91,7 @@ export default function SearchBar() {
               {months.map((m) => (
                 <div
                   key={m}
-                  className="px-3 py-2 text-black hover:bg-gray-100 cursor-pointer"
+                  className="px-3 py-2 text-black text-sm hover:bg-gray-100 cursor-pointer"
                   onClick={() => {
                     setMonthValue(m);
                     setMonthOpen(false);
@@ -104,15 +104,14 @@ export default function SearchBar() {
           )}
         </div>
 
-
         {/* DAYS — NUMBER INPUT */}
-        <div className="flex flex-1 items-center gap-3 px-6 py-5 border-r">
-          <FaClock className="text-gray-400 text-lg" />
+        <div className="flex flex-1 items-center gap-2 sm:gap-3 px-3 sm:px-6 py-3 sm:py-5 sm:border-r border-b sm:border-b-0">
+          <FaClock className="text-gray-400 text-lg flex-shrink-0" />
 
           <input
             type="number"
             min="1"
-            className="w-full outline-none text-gray-700 font-medium"
+            className="w-full outline-none text-gray-700 font-medium text-sm sm:text-base"
             placeholder="Days"
             value={daysValue}
             onChange={(e) => setDaysValue(e.target.value)}
@@ -120,7 +119,7 @@ export default function SearchBar() {
         </div>
 
         {/* BUTTON */}
-        <button className="bg-teal-400 cursor-pointer hover:bg-teal-500 text-white font-semibold tracking-wide px-10 py-5 rounded-md" onClick={()=>navigate(`/search?country=${countryValue}&month=${monthValue}&days=${daysValue}`)}>
+        <button className="bg-teal-400 cursor-pointer hover:bg-teal-500 text-white font-semibold tracking-wide px-6 sm:px-10 py-3 sm:py-5 rounded-md flex-shrink-0 text-sm sm:text-base" onClick={()=>navigate(`/search?country=${countryValue}&month=${monthValue}&days=${daysValue}`)}>
           FIND NOW
         </button>
       </div>

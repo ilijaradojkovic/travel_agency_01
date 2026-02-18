@@ -23,17 +23,17 @@ export default function FeatureSection() {
   ];
 
   return (
-    <section className="w-full py-20 md:mt-30">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-14 place-items-center">
+    <section className="w-full py-10 sm:py-20 px-4 md:mt-30">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-14 place-items-center">
         {items.map((item, index) => (
-          <div key={index} className="flex flex-col items-center text-center gap-4">
+          <div key={index} className="flex flex-col items-center text-center gap-3 sm:gap-4">
             <img
               src={item.img}
               alt={item.title}
-              className="w-20 h-20 transition-transform duration-300 cursor-pointer hover:-translate-y-2"
+              className="w-16 sm:w-20 h-16 sm:h-20 transition-transform duration-300 cursor-pointer hover:-translate-y-2"
             />
-            <h3 className="text-xl font-semibold text-gray-800">{item.title}</h3>
-            <p className="text-gray-500 text-sm leading-relaxed w-[70%]">
+            <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-800">{item.title}</h3>
+            <p className="text-gray-500 text-xs sm:text-sm leading-relaxed w-[85%] sm:w-[70%]">
               {item.desc}
             </p>
           </div>
