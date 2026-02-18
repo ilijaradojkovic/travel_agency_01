@@ -26,7 +26,7 @@ export default function Navbar() {
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
-    <nav className="bg-white h-[10vh] flex items-center relative px-4 sm:px-6 z-50">
+    <nav className="bg-white h-[10vh] flex items-center relative px-4 sm:px-6 z-50 overflow-hidden">
       {/* Logo */}
       <div className="flex items-center">
         <Link to="/">

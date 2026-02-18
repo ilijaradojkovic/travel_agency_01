@@ -15,7 +15,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="min-h-[60vh] sm:h-[90vh]">
         <div
-          className="bg-[url('./images/hero.jpg')] 
+          className="
     bg-cover 
     bg-center 
     bg-no-repeat
@@ -29,9 +29,17 @@ export default function Home() {
     min-h-[60vh] sm:h-[80vh]
     relative
     px-4 sm:px-6"
+
+    style={{
+      backgroundImage:"url('./images/hero.jpg')"
+    }}
         >
-          <h5 className="text-2xl sm:text-4xl lg:text-5xl font-yellowtail">Come sith Us</h5>
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold">Relax and Enjoy.</h1>
+          <h5 className="text-2xl sm:text-4xl lg:text-5xl font-yellowtail">
+            Come sith Us
+          </h5>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold">
+            Relax and Enjoy.
+          </h1>
           <h5 className="text-sm sm:text-base md:text-lg lg:text-2xl text-center w-[90%] sm:w-[80%] md:w-[60%]">
             Experience peace, adventure, and bliss.
           </h5>

@@ -6,7 +6,7 @@ export default function AboutUsPage() {
   return (
     <div className="flex flex-col w-full">
       {/* Hero sekcija */}
-      <section className="relative h-40 sm:h-[60vh] bg-[url('./images/about.jpg')] bg-cover bg-center flex items-center justify-center">
+      <section style={{ backgroundImage: "url('./images/about.jpg')" }} className="relative h-40 sm:h-[60vh] bg-cover bg-center flex items-center justify-center">
         <div className="bg-black/50 w-full h-full absolute top-0 left-0"></div>
         <h1 className="relative z-10 text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-bold text-center px-4">
           About Us
